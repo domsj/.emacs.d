@@ -16,3 +16,8 @@
 ; wind move http://emacswiki.org/emacs/WindMove
 (when (fboundp 'windmove-default-keybindings)
       (windmove-default-keybindings))
+
+(autoload 'paredit-mode "paredit")
+(add-hook 'emacs-lisp-mode-hook 'paredit-mode)
+(add-hook 'clojure-mode-hook 'paredit-mode)
+
