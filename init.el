@@ -3,6 +3,7 @@
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (package-initialize)
 
+(add-to-list 'load-path user-emacs-directory)
 (add-to-list 'load-path
   (expand-file-name "expand-region.el" user-emacs-directory))
 
@@ -10,8 +11,7 @@
 (global-set-key (kbd "C-=") 'er/expand-region)
 (global-set-key (kbd "C-+") 'er/contract-region)
 
-;(require 'unbound)
-(load-file "~/.emacs.d/unbound.el")
+(require 'unbound)
 
 ; wind move http://emacswiki.org/emacs/WindMove
 (when (fboundp 'windmove-default-keybindings)
@@ -33,3 +33,6 @@
 (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
 (add-hook 'clojure-mode-hook 'paredit-mode)
 
+(require 'rainbow-delimiters)
+(add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
