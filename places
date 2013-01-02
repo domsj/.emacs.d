@@ -1,8 +1,0 @@
-;;; -*- coding: utf-8 -*-
-(("/home/jan/.emacs.d/elpa/clojure-mode-2.0.0/clojure-mode-autoloads.el" . 1087)
- ("/home/jan/.emacs.d/elpa/nrepl-0.1.5/nrepl-autoloads.el" . 896)
- ("/home/jan/.emacs.d/init.el" . 191)
- ("/home/jan/projects/my-data/project.clj" . 1137)
- ("/home/jan/projects/my-data/src/my_data/handler.clj" . 1112)
- ("/home/jan/projects/my-data/src/my_data/orient_db.clj" . 773)
- ("/home/jan/projects/my-data/test/my_data/core_test.clj" . 111))
