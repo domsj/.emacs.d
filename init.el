@@ -17,6 +17,18 @@
 (when (fboundp 'windmove-default-keybindings)
       (windmove-default-keybindings))
 
+(require 'auto-complete)
+(add-hook 'emacs-lisp-mode-hook 'auto-complete-mode)
+(add-hook 'clojure-mode-hook 'auto-complete-mode)
+
+(require 'ac-nrepl)
+(add-hook 'nrepl-mode-hook 'ac-nrepl-setup)
+(add-hook 'nrepl-interaction-mode-hook 'ac-nrepl-setup)
+(eval-after-load "auto-complete"
+  '(add-to-list 'ac-modes 'nrepl-mode))
+
+(define-key nrepl-interaction-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc)
+
 (autoload 'paredit-mode "paredit")
 (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
 (add-hook 'clojure-mode-hook 'paredit-mode)
