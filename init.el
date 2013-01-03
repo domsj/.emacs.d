@@ -39,3 +39,6 @@
 
 (require 'yasnippet)
 (yas-global-mode 1)
+
+(add-to-list 'load-path (expand-file-name "helm" user-emacs-directory))
+(require 'helm-config)
