@@ -42,3 +42,4 @@
 
 (add-to-list 'load-path (expand-file-name "helm" user-emacs-directory))
 (require 'helm-config)
+(global-set-key (kbd "M-n") 'helm-mini)
