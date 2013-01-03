@@ -42,4 +42,17 @@
 
 (add-to-list 'load-path (expand-file-name "helm" user-emacs-directory))
 (require 'helm-config)
-(global-set-key (kbd "M-n") 'helm-mini)
+(global-set-key (kbd "C-x C-h") 'helm-mini)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+
+(require 'projectile)
+(projectile-global-mode)
+(setq projectile-enable-caching nil)
+; die helm projectile werkt precies niet...
+;(require 'helm-projectile)
+
+; resize windows
+(global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
+(global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "S-C-<down>") 'shrink-window)
+(global-set-key (kbd "S-C-<up>") 'enlarge-window)
