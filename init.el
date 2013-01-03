@@ -7,15 +7,23 @@
 (add-to-list 'load-path
   (expand-file-name "expand-region.el" user-emacs-directory))
 
+
 (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
 (global-set-key (kbd "C-+") 'er/contract-region)
 
 (require 'unbound)
 
+; resize windows
+(global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
+(global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "S-C-<down>") 'shrink-window)
+(global-set-key (kbd "S-C-<up>") 'enlarge-window)
+
 ; wind move http://emacswiki.org/emacs/WindMove
 (when (fboundp 'windmove-default-keybindings)
       (windmove-default-keybindings))
+
 
 (require 'auto-complete)
 (add-hook 'emacs-lisp-mode-hook 'auto-complete-mode)
@@ -51,8 +59,3 @@
 ; die helm projectile werkt precies niet...
 ;(require 'helm-projectile)
 
-; resize windows
-(global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
-(global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
-(global-set-key (kbd "S-C-<down>") 'shrink-window)
-(global-set-key (kbd "S-C-<up>") 'enlarge-window)
