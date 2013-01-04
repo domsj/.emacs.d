@@ -5,7 +5,7 @@
 
 (add-to-list 'load-path user-emacs-directory)
 (add-to-list 'load-path
-  (expand-file-name "expand-region.el" user-emacs-directory))
+  (expand-file-name "expand-region" user-emacs-directory))
 
 
 (require 'expand-region)
@@ -59,3 +59,4 @@
 ; die helm projectile werkt precies niet...
 ;(require 'helm-projectile)
 
+(put 'upcase-region 'disabled nil)
