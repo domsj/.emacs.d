@@ -4,3 +4,6 @@
 [submodule "expand-region"]
 	path = expand-region
 	url = https://github.com/magnars/expand-region.el.git
+[submodule "workgroups"]
+	path = workgroups
+	url = git://github.com/tlh/workgroups.el

@@ -4,11 +4,9 @@
 (package-initialize)
 
 (add-to-list 'load-path user-emacs-directory)
-(add-to-list 'load-path
-  (expand-file-name "expand-region" user-emacs-directory))
-
-; C-u 0 M-x byte-recompile-directory
-; (byte-recompile-directory (expand-file-name user-emacs-directory) 0)
+(add-to-list 'load-path (expand-file-name "expand-region" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "helm" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "workgroups" user-emacs-directory))
 
 (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
@@ -50,7 +48,6 @@
 (require 'yasnippet)
 (yas-global-mode 1)
 
-(add-to-list 'load-path (expand-file-name "helm" user-emacs-directory))
 (require 'helm-config)
 (global-set-key (kbd "C-x C-h") 'helm-mini)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
@@ -60,6 +57,9 @@
 (setq projectile-enable-caching nil)
 ; die helm projectile werkt precies niet...
 ;(require 'helm-projectile)
+
+(require 'workgroups)
+(setq wg-prefix-key (kbd "C-c w"))
 
 (put 'upcase-region 'disabled nil)
 (custom-set-variables
