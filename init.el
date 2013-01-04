@@ -7,6 +7,7 @@
 (add-to-list 'load-path (expand-file-name "expand-region" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "helm" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "workgroups" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "twittering-mode" user-emacs-directory))
 
 (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
@@ -60,6 +61,9 @@
 
 (require 'workgroups)
 (setq wg-prefix-key (kbd "C-c w"))
+
+(require 'twittering-mode)
+(setq twittering-use-master-password t)
 
 (put 'upcase-region 'disabled nil)
 (custom-set-variables
