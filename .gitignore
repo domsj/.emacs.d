@@ -6,3 +6,4 @@ ac-comphist.dat
 elpa/archives/marmalade
 url/cookies
 *.elc
+.yas-compiled-snippets.el
