@@ -7,6 +7,8 @@
 (add-to-list 'load-path
   (expand-file-name "expand-region" user-emacs-directory))
 
+; C-u 0 M-x byte-recompile-directory
+; (byte-recompile-directory (expand-file-name user-emacs-directory) 0)
 
 (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
