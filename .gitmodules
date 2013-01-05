@@ -10,3 +10,6 @@
 [submodule "twittering-mode"]
 	path = twittering-mode
 	url = https://github.com/hayamiz/twittering-mode.git
+[submodule "bookmark-plus"]
+	path = bookmark-plus
+	url = https://github.com/emacsmirror/bookmark-plus.git

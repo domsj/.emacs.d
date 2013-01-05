@@ -8,6 +8,9 @@
 (add-to-list 'load-path (expand-file-name "helm" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "workgroups" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "twittering-mode" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "bookmark-plus" user-emacs-directory))
+
+(require 'bookmark+)
 
 (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
