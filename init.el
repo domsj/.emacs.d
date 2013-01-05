@@ -65,6 +65,9 @@
 (require 'twittering-mode)
 (setq twittering-use-master-password t)
 
+; open buffer menu in same window
+(global-set-key (kbd "\C-x\C-b") 'buffer-menu)
+
 ; fancier goto-line from http://whattheemacsd.com/key-bindings.el-01.html
 (defun goto-line-with-feedback ()
   "Show line numbers temporarily, while prompting for the line number input"
