@@ -23,11 +23,7 @@
 (require 'unbound)
 
 ; http://earthviaradio.wordpress.com/2012/02/06/swapping-the-left-alt-and-ctrl-keys-in-ubuntu-11-10/
-; http://stackoverflow.com/questions/7235381/unbind-c-m-from-ret
-(cond (window-system
-       (global-set-key (kbd "C-m") 'smex)
-       (global-set-key (kbd "<return>") 'newline)))
-
+(global-set-key (kbd "C-,") 'smex)
 
 ; resize windows
 (global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
