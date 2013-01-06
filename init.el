@@ -9,6 +9,10 @@
 (add-to-list 'load-path (expand-file-name "workgroups" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "twittering-mode" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "bookmark-plus" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "undo-tree" user-emacs-directory))
+
+(require 'undo-tree)
+(undo-tree-mode)
 
 (require 'bookmark+)
 
