@@ -23,6 +23,8 @@
 (require 'unbound)
 
 ; http://earthviaradio.wordpress.com/2012/02/06/swapping-the-left-alt-and-ctrl-keys-in-ubuntu-11-10/
+
+(global-unset-key (kbd "M-x"))
 (global-set-key (kbd "C-,") 'smex)
 
 ; resize windows
@@ -35,6 +37,7 @@
 (when (fboundp 'windmove-default-keybindings)
       (windmove-default-keybindings))
 
+(setq set-mark-command-repeat-pop 1)
 
 (require 'auto-complete)
 (add-hook 'emacs-lisp-mode-hook 'auto-complete-mode)
