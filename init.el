@@ -34,8 +34,8 @@
 (global-set-key (kbd "S-C-<up>") 'enlarge-window)
 
 ; wind move http://emacswiki.org/emacs/WindMove
-(when (fboundp 'windmove-default-keybindings)
-      (windmove-default-keybindings))
+; (when (fboundp 'windmove-default-keybindings)
+;   (windmove-default-keybindings))
 
 (setq set-mark-command-repeat-pop 1)
 
@@ -93,16 +93,21 @@
 (global-set-key [remap goto-line] 'goto-line-with-feedback)
 
 
-(put 'upcase-region 'disabled nil)
+;;;;;;;;;;;; emacs auto inserted stuff below
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(show-trailing-whitespace t))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+(put 'narrow-to-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
