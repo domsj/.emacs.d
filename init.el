@@ -93,6 +93,11 @@
 (global-set-key [remap goto-line] 'goto-line-with-feedback)
 
 
+(require 'window-number)
+(window-number-meta-mode)
+(window-number-mode)
+
+
 ;;;;;;;;;;;; emacs auto inserted stuff below
 
 (custom-set-variables
