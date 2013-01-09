@@ -97,7 +97,8 @@
 (window-number-meta-mode)
 (window-number-mode)
 
-
+(global-set-key (kbd "C-S-f") 'forward-word)
+(global-set-key (kbd "C-S-b") 'backward-word)
 
 ;;;;;;;;;;;; emacs auto inserted stuff below
 
