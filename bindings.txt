@@ -1,0 +1,28 @@
+C-u C-space     cycle mark ring
+C-c r           revert to file on disk
+C-M-v           scroll other window
+M-%             search with regex
+M-g M-g         go to line
+C-h d           apropos documentation
+C-x 4 C-f       open file in new window
+
+C-x (           start macro
+C-x )           stop macro
+C-x e           play last macro (ook gebruiken met C-u 9 ...)
+
+-- paredit & clojure-mode
+C-M-r           correct indentation
+M-.             jump to implementation
+M-/             completion
+M-;             comment region
+
+
+-- dired
+g               refresh
+m               mark
+d               mark for deletion
+x               delete marked files
+u               unmark
+backspace       unmark previous line
+n               next line
+p               previous line
