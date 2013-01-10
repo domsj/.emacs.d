@@ -24,7 +24,8 @@
 
 ; http://earthviaradio.wordpress.com/2012/02/06/swapping-the-left-alt-and-ctrl-keys-in-ubuntu-11-10/
 
-(global-unset-key (kbd "M-x"))
+; C-, is not available in flyspell mode... so also leave the M-x binding
+;(global-unset-key (kbd "M-x"))
 (global-set-key (kbd "C-,") 'smex)
 
 ; resize windows
