@@ -11,6 +11,9 @@
 (add-to-list 'load-path (expand-file-name "bookmark-plus" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "undo-tree" user-emacs-directory))
 
+(when window-system
+  (exec-path-from-shell-initialize))
+
 (require 'undo-tree)
 (undo-tree-mode)
 
