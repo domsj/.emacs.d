@@ -81,6 +81,8 @@
 
 (require 'twittering-mode)
 (setq twittering-use-master-password t)
+(setq twittering-icon-mode t)
+(setq twittering-use-icon-storage t)
 
 ; open buffer menu in same window
 (global-set-key (kbd "\C-x\C-b") 'buffer-menu)
