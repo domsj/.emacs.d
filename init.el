@@ -47,13 +47,21 @@
 (add-hook 'emacs-lisp-mode-hook 'auto-complete-mode)
 (add-hook 'clojure-mode-hook 'auto-complete-mode)
 
-(require 'ac-nrepl)
-(add-hook 'nrepl-mode-hook 'ac-nrepl-setup)
-(add-hook 'nrepl-interaction-mode-hook 'ac-nrepl-setup)
-(eval-after-load "auto-complete"
-  '(add-to-list 'ac-modes 'nrepl-mode))
+(setq inferior-lisp-program "bash browser-repl")
 
-(define-key nrepl-interaction-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc)
+(global-set-key (kbd "<XF86Back>") 'previous-buffer)
+(global-set-key (kbd "<XF86Forward>") 'next-buffer)
+
+
+;; http://stackoverflow.com/questions/10506496/run-browse-url-in-emacs-without-giving-focus-to-the-browser
+
+;; (require 'ac-nrepl)
+;; (add-hook 'nrepl-mode-hook 'ac-nrepl-setup)
+;; (add-hook 'nrepl-interaction-mode-hook 'ac-nrepl-setup)
+;; (eval-after-load "auto-complete"
+;;   '(add-to-list 'ac-modes 'nrepl-mode))
+
+;; (define-key nrepl-interaction-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc)
 
 (autoload 'paredit-mode "paredit")
 (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
