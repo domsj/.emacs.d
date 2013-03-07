@@ -14,6 +14,8 @@
 (when window-system
   (exec-path-from-shell-initialize))
 
+(load-file "~/.emacs.d/typerex-append.el")
+
 (require 'undo-tree)
 (undo-tree-mode)
 
