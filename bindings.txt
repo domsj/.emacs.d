@@ -1,14 +1,24 @@
-C-u C-space     cycle mark ring
+check out
+- bookmarks (plus)
+- emacsclient http://www.emacswiki.org/emacs/EmacsClient
+
+
+
+-- general
+
+M-m             go back to indentation (aka C-a TAB)
 C-c r           revert to file on disk
 C-M-v           scroll other window
 M-%             search with regex
 M-g M-g         go to line
-C-h d           apropos documentation
 C-x 4 C-f       open file in new window
 
-C-x (           start macro
-C-x )           stop macro
-C-x e           play last macro (ook gebruiken met C-u 9 ...)
+-- typerex
+C-c C-t         type info
+C-o d           definition
+C-M-x           eval phrase
+C-c C-n         next phrase
+C-c C-p         previous phrase
 
 -- paredit & clojure-mode
 C-M-r           correct indentation
