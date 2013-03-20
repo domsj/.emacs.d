@@ -22,6 +22,12 @@
 
 (load-file "~/.emacs.d/typerex-append.el")
 
+;; be compatible with my colleagues
+;; intend using space instead of tabs
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+(setq indent-line-function 'insert-tab)
+
 (require 'undo-tree)
 (undo-tree-mode)
 
@@ -116,6 +122,7 @@
         (goto-line (read-number "Goto line: ")))
     (linum-mode -1)))
 (global-set-key [remap goto-line] 'goto-line-with-feedback)
+; M-g g is the default emacs goto-line shortcut
 
 
 (require 'window-number)
