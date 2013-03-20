@@ -2,4 +2,4 @@
 # name: fun
 # key: fun
 # --
-fun ${1:args} -> $0
+fun ${1:()} -> $0
