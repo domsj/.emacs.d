@@ -66,6 +66,14 @@
 (global-set-key (kbd "<XF86Back>") 'previous-buffer)
 (global-set-key (kbd "<XF86Forward>") 'next-buffer)
 
+(global-set-key (kbd "M-g s") 'helm-do-grep)
+
+(global-set-key (kbd "C-x g") 'magit-status)
+
+(global-set-key (kbd "C-x m") 'eshell)
+(global-set-key (kbd "C-x M") (lambda () (interactive) (eshell t))) ; new eshell
+
+
 
 ;; http://stackoverflow.com/questions/10506496/run-browse-url-in-emacs-without-giving-focus-to-the-browser
 
