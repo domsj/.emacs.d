@@ -12,6 +12,13 @@ C-M-v           scroll other window
 M-%             search with regex
 M-g M-g         go to line
 C-x 4 C-f       open file in new window
+M-g s           (helm) grep
+C-u M-g s       (helm) recursive grep
+C-w             backward kill word
+C-x C-k         kill region
+C-x C-k         kill region
+C-x g           magit status
+
 
 -- typerex
 C-c C-t         type info
