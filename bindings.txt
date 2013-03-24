@@ -27,6 +27,18 @@ C-M-x           eval phrase
 C-c C-n         next phrase
 C-c C-p         previous phrase
 
+
+-- magit
+http://daemianmack.com/magit-cheatsheet.html
+C-x g           magit status
+e               ediff compare
+P P             push
+F F             pull
+l l             history viewer
+b               switch to branch
+B               create new branch
+
+
 -- paredit & clojure-mode
 C-M-r           correct indentation
 M-.             jump to implementation
