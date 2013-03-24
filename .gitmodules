@@ -15,4 +15,4 @@
 	url = https://github.com/emacsmirror/bookmark-plus.git
 [submodule "undo-tree"]
 	path = undo-tree
-	url = http://www.dr-qubit.org/git/undo-tree.git
+	url = https://github.com/emacsmirror/undo-tree.git
