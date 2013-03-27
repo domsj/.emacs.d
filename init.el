@@ -22,8 +22,7 @@
 
 (load-file "~/.emacs.d/typerex-append.el")
 
-;; be compatible with my colleagues
-;; intend using space instead of tabs
+;; indent using spaces instead of tabs
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 (setq indent-line-function 'insert-tab)
@@ -39,22 +38,13 @@
 
 (require 'unbound)
 
-; http://earthviaradio.wordpress.com/2012/02/06/swapping-the-left-alt-and-ctrl-keys-in-ubuntu-11-10/
-
-; C-, is not available in flyspell mode... so also leave the M-x binding
-;(global-unset-key (kbd "M-x"))
-(global-set-key (kbd "C-,") 'smex)
-
 ; resize windows
 (global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
 (global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
 (global-set-key (kbd "S-C-<down>") 'shrink-window)
 (global-set-key (kbd "S-C-<up>") 'enlarge-window)
 
-; wind move http://emacswiki.org/emacs/WindMove
-; (when (fboundp 'windmove-default-keybindings)
-;   (windmove-default-keybindings))
-
+; keep on popping marks with C-space
 (setq set-mark-command-repeat-pop 1)
 
 (require 'auto-complete)
@@ -71,7 +61,7 @@
 (global-set-key (kbd "C-x g") 'magit-status)
 
 (global-set-key (kbd "C-x m") 'eshell)
-(global-set-key (kbd "C-x M") (lambda () (interactive) (eshell t))) ; new eshell
+(global-set-key (kbd "C-x M") (lambda () (interactive) (eshell t)))
 
 ;; replace buffer-menu with ibuffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
@@ -79,7 +69,7 @@
 ;; a la steve yegge
 (global-set-key "\C-w" 'backward-kill-word)
 (global-set-key "\C-x\C-k" 'kill-region)
-(global-set-key "\C-c\C-k" 'kill-region)
+
 
 ;; duplicate the current line or region
 ;; TODO get function somewhere
@@ -145,9 +135,6 @@
 (require 'window-number)
 (window-number-meta-mode)
 (window-number-mode)
-
-(global-set-key (kbd "C-S-f") 'forward-word)
-(global-set-key (kbd "C-S-b") 'backward-word)
 
 ;;;;;;;;;;;; emacs auto inserted stuff below
 
