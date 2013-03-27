@@ -4,7 +4,7 @@
 
 
 ;;;### (autoloads (projectile-mode projectile-global-mode) "projectile"
-;;;;;;  "projectile.el" (20709 36160))
+;;;;;;  "projectile.el" (20819 29322))
 ;;; Generated autoloads from projectile.el
 
 (defvar projectile-global-mode nil "\
@@ -31,11 +31,13 @@ See `projectile-mode' for more information on Projectile mode.
 (autoload 'projectile-mode "projectile" "\
 Minor mode to assist project management and navigation.
 
+\\{projectile-mode-map}
+
 \(fn &optional ARG)" t nil)
 
 ;;;***
 
-;;;### (autoloads nil nil ("projectile-pkg.el") (20709 36160 229081))
+;;;### (autoloads nil nil ("projectile-pkg.el") (20819 29322 666392))
 
 ;;;***
 
