@@ -5,7 +5,6 @@ check out
 
 
 -- general
-
 M-m             go back to indentation (aka C-a TAB)
 C-c r           revert to file on disk
 C-M-v           scroll other window
@@ -17,26 +16,29 @@ C-u M-g s       (helm) recursive grep
 C-w             backward kill word
 C-x C-k         kill region
 C-x C-k         kill region
-C-x g           magit status
 
 
 -- typerex
-C-c C-t         type info
 C-o d           definition
-C-M-x           eval phrase
-C-c C-n         next phrase
-C-c C-p         previous phrase
 
 
 -- magit
 http://daemianmack.com/magit-cheatsheet.html
-C-x g           magit status
+S-TAB           toggle visibility of current section and its children
+1,2,3,4         Expand current section to the corresponding level of detail
 e               ediff compare
-P P             push
+i               add file to .gitignore
+s               Stage current hunk OR selected region
 F F             pull
-l l             history viewer
-b               switch to branch
-B               create new branch
+C-u P           push to specified remote repository
+w               wazzup
+m               initiate manual merge
+--stashing
+z               create new stash
+Z               create new stash, leave changes in working and staging area
+a               apply stash
+A               pop stash
+k               drop stash
 
 
 -- paredit & clojure-mode
@@ -47,11 +49,6 @@ M-;             comment region
 
 
 -- dired
-g               refresh
 m               mark
-d               mark for deletion
-x               delete marked files
 u               unmark
-backspace       unmark previous line
-n               next line
-p               previous line
+R               move
