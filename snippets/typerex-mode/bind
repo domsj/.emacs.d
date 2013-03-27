@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# name: b
-# key: b
+# name: bind
+# key: bind
 # --
 >>= fun ${1:()} -> $0
