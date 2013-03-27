@@ -110,6 +110,8 @@
 (global-set-key (kbd "C-x C-h") 'helm-mini)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 
+(global-set-key (kbd "C-x f") 'find-file-in-repository)
+
 (require 'projectile)
 (projectile-global-mode)
 (setq projectile-enable-caching nil)

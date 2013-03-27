@@ -16,7 +16,7 @@ C-u M-g s       (helm) recursive grep
 C-w             backward kill word
 C-x C-k         kill region
 C-x C-k         kill region
-
+C-x f           find file in repository
 
 -- typerex
 C-o d           definition
