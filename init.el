@@ -115,8 +115,6 @@
 (setq twittering-use-master-password t)
 (setq twittering-icon-mode t)
 (setq twittering-use-icon-storage t)
-(autoload 'twittering-numbering "twittering-numbering" nil t)
-(add-hook 'twittering-mode-hook 'twittering-numbering)
 
 
 ; fancier goto-line from http://whattheemacsd.com/key-bindings.el-01.html
