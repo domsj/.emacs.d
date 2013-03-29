@@ -1,7 +1,9 @@
 check out
 - bookmarks (plus)
 - emacsclient http://www.emacswiki.org/emacs/EmacsClient
-
+- http://www.djcbsoftware.nl/code/mu/mu4e/Gmail-configuration.html
+- http://www.emacswiki.org/emacs/Sunrise_Commander
+- registers!!
 
 
 -- general
@@ -17,6 +19,8 @@ C-w             backward kill word
 C-x C-k         kill region
 C-x C-k         kill region
 C-x f           find file in repository
+C-c F           find file as root
+
 
 -- typerex
 C-o d           definition

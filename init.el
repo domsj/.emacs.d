@@ -102,6 +102,18 @@
 
 (global-set-key (kbd "C-x f") 'find-file-in-repository)
 
+(defun find-file-as-root ()
+  "Like `ido-find-file, but automatically edit the file with
+root-privileges (using tramp/sudo), if the file is not writable by
+user."
+; http://www.blogger.com/comment.g?blogID=3992530807750384868&postID=5611080369015051953
+  (interactive)
+  (let ((file (ido-read-file-name "Edit as root: ")))
+    (unless (file-writable-p file)
+      (setq file (concat "/sudo:root@localhost:" file)))
+    (find-file file)))
+(global-set-key (kbd "C-c F") 'find-file-as-root)
+
 (require 'projectile)
 (projectile-global-mode)
 (setq projectile-enable-caching nil)
