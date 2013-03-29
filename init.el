@@ -10,6 +10,7 @@
 (add-to-list 'load-path (expand-file-name "twittering-mode" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "bookmark-plus" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "undo-tree" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "emacs-skype" user-emacs-directory))
 
 (when window-system
   (exec-path-from-shell-initialize))
@@ -113,6 +114,10 @@ user."
       (setq file (concat "/sudo:root@localhost:" file)))
     (find-file file)))
 (global-set-key (kbd "C-c F") 'find-file-as-root)
+
+(require 'skype)
+(setq skype--my-user-handle "jan_doms")
+
 
 (require 'projectile)
 (projectile-global-mode)
