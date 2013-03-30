@@ -17,9 +17,8 @@ M-g s           (helm) grep
 C-u M-g s       (helm) recursive grep
 C-w             backward kill word
 C-x C-k         kill region
-C-x C-k         kill region
 C-x f           find file in repository
-C-c F           find file as root
+C-x F           find file as root
 
 
 -- typerex

@@ -48,6 +48,8 @@
 ; keep on popping marks with C-space
 (setq set-mark-command-repeat-pop 1)
 
+(electric-pair-mode +1)
+
 (require 'auto-complete)
 (add-hook 'emacs-lisp-mode-hook 'auto-complete-mode)
 (add-hook 'clojure-mode-hook 'auto-complete-mode)
@@ -67,7 +69,6 @@
 ;; replace buffer-menu with ibuffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
-;; a la steve yegge
 (global-set-key "\C-w" 'backward-kill-word)
 (global-set-key "\C-x\C-k" 'kill-region)
 
@@ -113,10 +114,11 @@ user."
     (unless (file-writable-p file)
       (setq file (concat "/sudo:root@localhost:" file)))
     (find-file file)))
-(global-set-key (kbd "C-c F") 'find-file-as-root)
+(global-set-key (kbd "C-x F") 'find-file-as-root)
 
 (require 'skype)
 (setq skype--my-user-handle "jan_doms")
+(skype--init)
 
 
 (require 'projectile)
