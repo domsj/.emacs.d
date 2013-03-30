@@ -19,3 +19,6 @@
 [submodule "emacs-skype"]
 	path = emacs-skype
 	url = https://github.com/kiwanami/emacs-skype.git
+[submodule "emms"]
+	path = emms
+	url = https://domsj@github.com/domsj/emms.git

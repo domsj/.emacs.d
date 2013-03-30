@@ -11,6 +11,8 @@
 (add-to-list 'load-path (expand-file-name "bookmark-plus" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "undo-tree" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "emacs-skype" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "emms/lisp" user-emacs-directory))
+
 
 (when window-system
   (exec-path-from-shell-initialize))
@@ -119,6 +121,16 @@ user."
 (require 'skype)
 (setq skype--my-user-handle "jan_doms")
 (skype--init)
+
+(require 'emms-setup)
+(emms-standard)
+(emms-all)
+(emms-default-players)
+(require 'emms-volume)
+(global-set-key (kbd "<XF86AudioRaiseVolume>") (lambda () (interactive) (emms-volume-raise)))
+(global-set-key (kbd "<XF86AudioLowerVolume>") (lambda () (interactive) (emms-volume-lower)))
+;(global-set-key (kbd "<XF86AudioMute>") (lambda () (interactive) (emms-pause))) meh no mute available..
+(global-set-key (kbd "<XF86AudioPlay>") (lambda () (interactive) (emms-pause)))
 
 
 (require 'projectile)
