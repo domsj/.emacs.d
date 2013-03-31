@@ -120,6 +120,12 @@ user."
 
 (winner-mode 1)
 
+(require 'buffer-move)
+(global-set-key (kbd "<s-up>")     'buf-move-up)
+(global-set-key (kbd "<s-down>")   'buf-move-down)
+(global-set-key (kbd "<s-left>")   'buf-move-left)
+(global-set-key (kbd "<s-right>")  'buf-move-right)
+
 (require 'skype)
 (setq skype--my-user-handle "jan_doms")
 (skype--init)

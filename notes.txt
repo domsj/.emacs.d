@@ -20,12 +20,14 @@ C-x C-k         kill region
 C-x f           find file in repository
 C-x F           find file as root
 
--- winner mode
+
+-- window & buffer management
 http://emacs.wordpress.com/2007/01/28/simple-window-configuration-management/
-C-c <left>      winner-undo
-C-c <right>     winner-redo
-C-x r w a       store current window config in register a
-C-x r j a       restore window config from register a
+C-c <left>                 winner-undo
+C-c <right>                winner-redo
+C-x r w a                  store current window config in register a
+C-x r j a                  restore window config from register a
+s-<left/right/up/down>     move buffer content in that direction
 
 
 -- typerex
@@ -36,10 +38,7 @@ C-o d           definition
 http://daemianmack.com/magit-cheatsheet.html
 S-TAB           toggle visibility of current section and its children
 1,2,3,4         Expand current section to the corresponding level of detail
-e               ediff compare
 i               add file to .gitignore
-s               Stage current hunk OR selected region
-F F             pull
 C-u P           push to specified remote repository
 w               wazzup
 m               initiate manual merge
