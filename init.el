@@ -23,7 +23,8 @@
 (setenv "MANPATH" "/home/jan/Development/ROOT/OPAM_ROOT/system/man:")
 (setenv "PATH" "/home/jan/Development/ROOT/OPAM_ROOT/system/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/jan/Development/ROOT/OCAML/bin:/home/jan/Development/ROOT/OPAM/bin")
 
-(load-file "~/.emacs.d/typerex-append.el")
+; typerex 2
+(with-temp-buffer (insert (shell-command-to-string "ocp-edit-mode emacs -load-global-config")) (eval-buffer))
 
 ;; (require 'bookmark+)
 (require 'unbound)
