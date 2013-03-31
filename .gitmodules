@@ -21,4 +21,4 @@
 	url = https://github.com/kiwanami/emacs-skype.git
 [submodule "emms"]
 	path = emms
-	url = https://domsj@github.com/domsj/emms.git
+	url = git://git.sv.gnu.org/emms.git
