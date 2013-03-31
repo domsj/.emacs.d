@@ -27,36 +27,43 @@
 
 ;; (require 'bookmark+)
 (require 'unbound)
-
-;; indent using spaces instead of tabs
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 4)
-(setq indent-line-function 'insert-tab)
-
-(require 'undo-tree)
-(undo-tree-mode)
-
-
 (require 'expand-region)
+(require 'undo-tree)
+(require 'rainbow-delimiters)
+(require 'yasnippet)
+(require 'helm-config)
+(require 'window-number)
+(require 'buffer-move)
+
+
+(add-hook 'ibuffer-mode-hook 'hl-line-mode)
+(add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
+
+(undo-tree-mode)
+(yas-global-mode 1)
+
+
 (global-set-key (kbd "C-=") 'er/expand-region)
 (global-set-key (kbd "C-+") 'er/contract-region)
 
-
-;; (require 'auto-complete)
-;; (add-hook 'emacs-lisp-mode-hook 'auto-complete-mode)
-;; (add-hook 'clojure-mode-hook 'auto-complete-mode)
-
-;; (setq inferior-lisp-program "bash browser-repl")
-
-
-(setq set-mark-command-repeat-pop 1)
-(electric-pair-mode +1)
-
+(global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-x m") 'eshell)
 (global-set-key (kbd "C-x M") (lambda () (interactive) (eshell t)))
 (global-set-key "\C-w" 'backward-kill-word)
 (global-set-key "\C-x\C-k" 'kill-region)
+
+; fancier goto-line from http://whattheemacsd.com/key-bindings.el-01.html
+; M-g g is the default emacs goto-line shortcut
+(defun goto-line-with-feedback ()
+  "Show line numbers temporarily, while prompting for the line number input"
+  (interactive)
+  (unwind-protect
+      (progn
+        (linum-mode 1)
+        (goto-line (read-number "Goto line: ")))
+    (linum-mode -1)))
+(global-set-key [remap goto-line] 'goto-line-with-feedback)
 
 
 ;; duplicate the current line or region
@@ -65,32 +72,41 @@
 
 ;; http://stackoverflow.com/questions/10506496/run-browse-url-in-emacs-without-giving-focus-to-the-browser
 
-;; (require 'ac-nrepl)
-;; (add-hook 'nrepl-mode-hook 'ac-nrepl-setup)
-;; (add-hook 'nrepl-interaction-mode-hook 'ac-nrepl-setup)
-;; (eval-after-load "auto-complete"
-;;   '(add-to-list 'ac-modes 'nrepl-mode))
 
-;; (define-key nrepl-interaction-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc)
 
-;; (autoload 'paredit-mode "paredit")
-;; (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
-;; (add-hook 'clojure-mode-hook 'paredit-mode)
+(tool-bar-mode -1)                             ; No toolbar
+(menu-bar-mode -1)                             ; No menubar
+(scroll-bar-mode -1)                           ; No scrollbar
+(setq inhibit-startup-message t)               ; No message at startup
+(setq visible-bell t)                          ; No beep when reporting errors
+(global-font-lock-mode 1)                      ; Color enabled
+(setq set-mark-command-repeat-pop 1)
+(electric-pair-mode +1)
 
-(require 'rainbow-delimiters)
-(add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
+(blink-cursor-mode 0)                          ; No blinking cursor
+; (setq track-eol nil)                           ; Cursor don't track end-of-line
+; (setq mouse-yank-at-point t)                   ; Paste at cursor position
+; (setq scroll-preserve-screen-position t)       ; Scroll without moving cursor
+(column-number-mode t)                         ; Show column number in mode-line
 
-(require 'yasnippet)
-(yas-global-mode 1)
+;; indent using spaces instead of tabs
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+(setq indent-line-function 'insert-tab)
+
+(setq-default indicate-empty-lines t)          ; Show empty lines
+(setq next-line-add-newlines t)                ; Add newline when at buffer end
+(setq require-final-newline 't)                ; Always newline at end of file
+(show-paren-mode 1)                            ; Highlight parenthesis pairs
+(setq window-min-height 10)                    ; Minimal height of windows
+(setq enable-recursive-minibuffers t)          ; Stack  minibuffers
+(icomplete-mode t)                             ; Completion in mini-buffer
+(setq read-buffer-completion-ignore-case 't)   ; Ignore case when completing buffer names
+(setq undo-limit 100000)                       ; Increase number of undo
+(defalias 'yes-or-no-p 'y-or-n-p)              ; y/n instead of yes/no
+
 
 ;;; ----------- finding & opening files
-
-(require 'helm-config)
-(global-set-key (kbd "C-x C-h") 'helm-mini)
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
-
-(global-set-key (kbd "C-x f") 'find-file-in-repository)
 
 (defun find-file-as-root ()
   "Like `ido-find-file, but automatically edit the file with
@@ -102,6 +118,10 @@ user."
     (unless (file-writable-p file)
       (setq file (concat "/sudo:root@localhost:" file)))
     (find-file file)))
+
+(global-set-key (kbd "C-x C-h") 'helm-mini)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+(global-set-key (kbd "C-x f") 'find-file-in-repository)
 (global-set-key (kbd "C-x F") 'find-file-as-root)
 
 (global-set-key (kbd "M-g s") 'helm-do-grep)
@@ -122,14 +142,12 @@ user."
 (global-set-key (kbd "S-C-<down>") 'shrink-window)
 (global-set-key (kbd "S-C-<up>") 'enlarge-window)
 
-(require 'window-number)
 (window-number-meta-mode)
 (window-number-mode)
 
 (winner-mode 1)
 
 ; move buffers
-(require 'buffer-move)
 (global-set-key (kbd "<s-up>")     'buf-move-up)
 (global-set-key (kbd "<s-down>")   'buf-move-down)
 (global-set-key (kbd "<s-left>")   'buf-move-left)
@@ -180,20 +198,6 @@ user."
 (setq twittering-use-master-password t)
 (setq twittering-icon-mode t)
 (setq twittering-use-icon-storage t)
-
-
-; fancier goto-line from http://whattheemacsd.com/key-bindings.el-01.html
-(defun goto-line-with-feedback ()
-  "Show line numbers temporarily, while prompting for the line number input"
-  (interactive)
-  (unwind-protect
-      (progn
-        (linum-mode 1)
-        (goto-line (read-number "Goto line: ")))
-    (linum-mode -1)))
-(global-set-key [remap goto-line] 'goto-line-with-feedback)
-; M-g g is the default emacs goto-line shortcut
-
 
 
 ;;;;;;;;;;;; emacs auto inserted stuff below

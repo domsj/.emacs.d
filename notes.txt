@@ -4,7 +4,7 @@ check out
 - http://www.djcbsoftware.nl/code/mu/mu4e/Gmail-configuration.html
 - http://www.emacswiki.org/emacs/Sunrise_Commander
 - registers!!
-
+- http://idorobots.org/2013/03/30/greader-alternative/ or some rss to email service
 
 -- general
 M-m             go back to indentation (aka C-a TAB)
