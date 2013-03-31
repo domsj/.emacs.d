@@ -36,12 +36,19 @@
 (require 'window-number)
 (require 'buffer-move)
 
+;; (setq yas/trigger-key (kbd "C-<tab>"))
+;; (yas-reload-all)
+;; (yas-global-mode 1)
+;; no yasnippet for now. try out hippie-expand first?
+;;(add-hook 'typerex-mode-hook '(lambda ()
+;;                                (setq yas/trigger-key (kbd "C-<tab>"))
+;;                                (yas-minor-mode)))
+
 
 (add-hook 'ibuffer-mode-hook 'hl-line-mode)
 (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
-
 (undo-tree-mode)
-(yas-global-mode 1)
+
 
 
 (global-set-key (kbd "C-=") 'er/expand-region)
@@ -163,8 +170,7 @@ user."
 (require 'emms-setup)
 (emms-standard)
 (emms-all)
-(setq emms-player-list '(emms-player-mplayer
-                         emms-player-mplayer-playlist))
+(emms-default-players)
 (require 'emms-volume)
 (global-set-key (kbd "<XF86AudioRaiseVolume>") (lambda () (interactive) (emms-volume-raise)))
 (global-set-key (kbd "<XF86AudioLowerVolume>") (lambda () (interactive) (emms-volume-lower)))
