@@ -25,6 +25,9 @@
 
 (load-file "~/.emacs.d/typerex-append.el")
 
+;; (require 'bookmark+)
+(require 'unbound)
+
 ;; indent using spaces instead of tabs
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
@@ -33,44 +36,25 @@
 (require 'undo-tree)
 (undo-tree-mode)
 
-(require 'bookmark+)
 
 (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
 (global-set-key (kbd "C-+") 'er/contract-region)
 
-(require 'unbound)
 
-; resize windows
-(global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
-(global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
-(global-set-key (kbd "S-C-<down>") 'shrink-window)
-(global-set-key (kbd "S-C-<up>") 'enlarge-window)
+;; (require 'auto-complete)
+;; (add-hook 'emacs-lisp-mode-hook 'auto-complete-mode)
+;; (add-hook 'clojure-mode-hook 'auto-complete-mode)
 
-; keep on popping marks with C-space
+;; (setq inferior-lisp-program "bash browser-repl")
+
+
 (setq set-mark-command-repeat-pop 1)
-
 (electric-pair-mode +1)
 
-(require 'auto-complete)
-(add-hook 'emacs-lisp-mode-hook 'auto-complete-mode)
-(add-hook 'clojure-mode-hook 'auto-complete-mode)
-
-(setq inferior-lisp-program "bash browser-repl")
-
-(global-set-key (kbd "<XF86Back>") 'previous-buffer)
-(global-set-key (kbd "<XF86Forward>") 'next-buffer)
-
-(global-set-key (kbd "M-g s") 'helm-do-grep)
-
 (global-set-key (kbd "C-x g") 'magit-status)
-
 (global-set-key (kbd "C-x m") 'eshell)
 (global-set-key (kbd "C-x M") (lambda () (interactive) (eshell t)))
-
-;; replace buffer-menu with ibuffer
-(global-set-key (kbd "C-x C-b") 'ibuffer)
-
 (global-set-key "\C-w" 'backward-kill-word)
 (global-set-key "\C-x\C-k" 'kill-region)
 
@@ -89,9 +73,9 @@
 
 ;; (define-key nrepl-interaction-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc)
 
-(autoload 'paredit-mode "paredit")
-(add-hook 'emacs-lisp-mode-hook 'paredit-mode)
-(add-hook 'clojure-mode-hook 'paredit-mode)
+;; (autoload 'paredit-mode "paredit")
+;; (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
+;; (add-hook 'clojure-mode-hook 'paredit-mode)
 
 (require 'rainbow-delimiters)
 (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
@@ -99,6 +83,8 @@
 
 (require 'yasnippet)
 (yas-global-mode 1)
+
+;;; ----------- finding & opening files
 
 (require 'helm-config)
 (global-set-key (kbd "C-x C-h") 'helm-mini)
@@ -118,13 +104,38 @@ user."
     (find-file file)))
 (global-set-key (kbd "C-x F") 'find-file-as-root)
 
+(global-set-key (kbd "M-g s") 'helm-do-grep)
+
+;;; ----------- end opening files
+
+;;; ----------- buffer and window management
+
+(global-set-key (kbd "<XF86Back>") 'previous-buffer)
+(global-set-key (kbd "<XF86Forward>") 'next-buffer)
+
+; replace buffer-menu with ibuffer
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+
+; resize windows
+(global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
+(global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "S-C-<down>") 'shrink-window)
+(global-set-key (kbd "S-C-<up>") 'enlarge-window)
+
+(require 'window-number)
+(window-number-meta-mode)
+(window-number-mode)
+
 (winner-mode 1)
 
+; move buffers
 (require 'buffer-move)
 (global-set-key (kbd "<s-up>")     'buf-move-up)
 (global-set-key (kbd "<s-down>")   'buf-move-down)
 (global-set-key (kbd "<s-left>")   'buf-move-left)
 (global-set-key (kbd "<s-right>")  'buf-move-right)
+
+;;; ----------- end buffer and window management
 
 (require 'skype)
 (setq skype--my-user-handle "jan_doms")
@@ -133,22 +144,37 @@ user."
 (require 'emms-setup)
 (emms-standard)
 (emms-all)
-(emms-default-players)
+(setq emms-player-list '(emms-player-mplayer
+                         emms-player-mplayer-playlist))
 (require 'emms-volume)
 (global-set-key (kbd "<XF86AudioRaiseVolume>") (lambda () (interactive) (emms-volume-raise)))
 (global-set-key (kbd "<XF86AudioLowerVolume>") (lambda () (interactive) (emms-volume-lower)))
-;(global-set-key (kbd "<XF86AudioMute>") (lambda () (interactive) (emms-pause))) meh no mute available..
+(global-set-key (kbd "<XF86AudioMute>") (lambda () (interactive) (emms-pause)))
 (global-set-key (kbd "<XF86AudioPlay>") (lambda () (interactive) (emms-pause)))
 
 
-(require 'projectile)
-(projectile-global-mode)
-(setq projectile-enable-caching nil)
+;; (setq gnus-select-method '(nnimap "gmail"
+;;                                   (nnimap-address "imap.gmail.com")
+;;                                   (nnimap-server-port 993)
+;;                                   (nnimap-stream ssl)))
+;; (setq message-send-mail-function 'smtpmail-send-it
+;;       smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
+;;       smtpmail-auth-credentials '(("smtp.gmail.com" 587 "username@gmail.com" nil))
+;;       smtpmail-default-smtp-server "smtp.gmail.com"
+;;       smtpmail-smtp-server "smtp.gmail.com"
+;;       smtpmail-smtp-service 587
+;;       smtpmail-local-domain "gmail.com")
+
+
+
+;; (require 'projectile)
+;; (projectile-global-mode)
+;; (setq projectile-enable-caching nil)
 ; die helm projectile werkt precies niet...
 ;(require 'helm-projectile)
 
-(require 'workgroups)
-(setq wg-prefix-key (kbd "C-c w"))
+;; (require 'workgroups)
+;; (setq wg-prefix-key (kbd "C-c w"))
 
 (require 'twittering-mode)
 (setq twittering-use-master-password t)
@@ -169,9 +195,6 @@ user."
 ; M-g g is the default emacs goto-line shortcut
 
 
-(require 'window-number)
-(window-number-meta-mode)
-(window-number-mode)
 
 ;;;;;;;;;;;; emacs auto inserted stuff below
 
