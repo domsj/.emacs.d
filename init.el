@@ -118,6 +118,8 @@ user."
     (find-file file)))
 (global-set-key (kbd "C-x F") 'find-file-as-root)
 
+(winner-mode 1)
+
 (require 'skype)
 (setq skype--my-user-handle "jan_doms")
 (skype--init)

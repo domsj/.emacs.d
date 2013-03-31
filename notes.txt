@@ -20,6 +20,13 @@ C-x C-k         kill region
 C-x f           find file in repository
 C-x F           find file as root
 
+-- winner mode
+http://emacs.wordpress.com/2007/01/28/simple-window-configuration-management/
+C-c <left>      winner-undo
+C-c <right>     winner-redo
+C-x r w a       store current window config in register a
+C-x r j a       restore window config from register a
+
 
 -- typerex
 C-o d           definition
