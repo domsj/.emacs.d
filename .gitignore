@@ -6,8 +6,7 @@ ac-comphist.dat
 elpa/archives/
 url/cookies
 *.elc
+*.el~
 .yas-compiled-snippets.el
 eshell
-elpa/archives/gnu/archive-contents
 tramp
-*.el~

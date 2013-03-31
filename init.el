@@ -23,10 +23,6 @@
 (setenv "MANPATH" "/home/jan/Development/ROOT/OPAM_ROOT/system/man:")
 (setenv "PATH" "/home/jan/Development/ROOT/OPAM_ROOT/system/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/jan/Development/ROOT/OCAML/bin:/home/jan/Development/ROOT/OPAM/bin")
 
-; typerex 2
-(with-temp-buffer (insert (shell-command-to-string "ocp-edit-mode emacs -load-global-config")) (eval-buffer))
-
-;; (require 'bookmark+)
 (require 'unbound)
 (require 'expand-region)
 (require 'undo-tree)
@@ -35,6 +31,16 @@
 (require 'helm-config)
 (require 'window-number)
 (require 'buffer-move)
+
+
+; typerex 2
+(with-temp-buffer (insert (shell-command-to-string "ocp-edit-mode emacs -load-global-config")) (eval-buffer))
+
+
+;; (require 'bookmark+)
+;; (require 'workgroups)
+;; (setq wg-prefix-key (kbd "C-c w"))
+
 
 ;; (setq yas/trigger-key (kbd "C-<tab>"))
 ;; (yas-reload-all)
@@ -61,8 +67,7 @@
 (global-set-key "\C-w" 'backward-kill-word)
 (global-set-key "\C-x\C-k" 'kill-region)
 
-; fancier goto-line from http://whattheemacsd.com/key-bindings.el-01.html
-; M-g g is the default emacs goto-line shortcut
+;; fancier goto-line from http://whattheemacsd.com/key-bindings.el-01.html
 (defun goto-line-with-feedback ()
   "Show line numbers temporarily, while prompting for the line number input"
   (interactive)
@@ -92,8 +97,6 @@
 (electric-pair-mode +1)
 
 (blink-cursor-mode 0)                          ; No blinking cursor
-; (setq track-eol nil)                           ; Cursor don't track end-of-line
-; (setq mouse-yank-at-point t)                   ; Paste at cursor position
 ; (setq scroll-preserve-screen-position t)       ; Scroll without moving cursor
 (column-number-mode t)                         ; Show column number in mode-line
 
@@ -190,16 +193,6 @@ user."
 ;;       smtpmail-smtp-service 587
 ;;       smtpmail-local-domain "gmail.com")
 
-
-
-;; (require 'projectile)
-;; (projectile-global-mode)
-;; (setq projectile-enable-caching nil)
-; die helm projectile werkt precies niet...
-;(require 'helm-projectile)
-
-;; (require 'workgroups)
-;; (setq wg-prefix-key (kbd "C-c w"))
 
 (require 'twittering-mode)
 (setq twittering-use-master-password t)
