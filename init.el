@@ -46,7 +46,7 @@
 (global-set-key (kbd "C-=") 'er/expand-region)
 (global-set-key (kbd "C-+") 'er/contract-region)
 
-(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-x m") 'eshell)
 (global-set-key (kbd "C-x M") (lambda () (interactive) (eshell t)))
@@ -73,7 +73,7 @@
 ;; http://stackoverflow.com/questions/10506496/run-browse-url-in-emacs-without-giving-focus-to-the-browser
 
 
-
+(ido-mode 1)
 (tool-bar-mode -1)                             ; No toolbar
 (menu-bar-mode -1)                             ; No menubar
 (scroll-bar-mode -1)                           ; No scrollbar

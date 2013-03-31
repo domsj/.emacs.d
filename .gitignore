@@ -10,3 +10,4 @@ url/cookies
 eshell
 elpa/archives/gnu/archive-contents
 tramp
+*.el~
