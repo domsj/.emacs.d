@@ -1,8 +1,10 @@
 check out
 - bookmarks (plus)
 - emacsclient http://www.emacswiki.org/emacs/EmacsClient
-
-
+- http://www.djcbsoftware.nl/code/mu/mu4e/Gmail-configuration.html
+- http://www.emacswiki.org/emacs/Sunrise_Commander
+- registers!!
+- http://idorobots.org/2013/03/30/greader-alternative/ or some rss to email service
 
 -- general
 M-m             go back to indentation (aka C-a TAB)
@@ -15,13 +17,23 @@ M-g s           (helm) grep
 C-u M-g s       (helm) recursive grep
 C-w             backward kill word
 C-x C-k         kill region
-C-x C-k         kill region
 C-x f           find file in repository
 C-c g           google
 
 
 -- helm
 C-x c l         helm locate
+=======
+C-x F           find file as root
+
+
+-- window & buffer management
+http://emacs.wordpress.com/2007/01/28/simple-window-configuration-management/
+C-c <left>                 winner-undo
+C-c <right>                winner-redo
+C-x r w a                  store current window config in register a
+C-x r j a                  restore window config from register a
+s-<left/right/up/down>     move buffer content in that direction
 
 
 -- typerex
@@ -32,10 +44,7 @@ C-o d           definition
 http://daemianmack.com/magit-cheatsheet.html
 S-TAB           toggle visibility of current section and its children
 1,2,3,4         Expand current section to the corresponding level of detail
-e               ediff compare
 i               add file to .gitignore
-s               Stage current hunk OR selected region
-F F             pull
 C-u P           push to specified remote repository
 w               wazzup
 m               initiate manual merge

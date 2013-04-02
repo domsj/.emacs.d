@@ -16,3 +16,9 @@
 [submodule "undo-tree"]
 	path = undo-tree
 	url = https://github.com/emacsmirror/undo-tree.git
+[submodule "emacs-skype"]
+	path = emacs-skype
+	url = https://github.com/kiwanami/emacs-skype.git
+[submodule "emms"]
+	path = emms
+	url = git://git.sv.gnu.org/emms.git
