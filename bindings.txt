@@ -17,6 +17,12 @@ C-w             backward kill word
 C-x C-k         kill region
 C-x C-k         kill region
 C-x f           find file in repository
+C-c g           google
+
+
+-- helm
+C-x c l         helm locate
+
 
 -- typerex
 C-o d           definition

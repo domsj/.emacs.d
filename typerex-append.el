@@ -5,7 +5,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Loading TypeRex mode for OCaml files
-(add-to-list 'load-path "/home/jan/.emacs.d")
 (add-to-list 'auto-mode-alist '("\\.ml[iylp]?" . typerex-mode))
 (add-to-list 'interpreter-mode-alist '("ocamlrun" . typerex-mode))
 (add-to-list 'interpreter-mode-alist '("ocaml" . typerex-mode))
