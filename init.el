@@ -12,6 +12,7 @@
 (add-to-list 'load-path (expand-file-name "undo-tree" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "emacs-skype" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "emms/lisp" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "ace-jump-mode" user-emacs-directory))
 
 
 (when window-system
@@ -31,7 +32,9 @@
 (require 'helm-config)
 (require 'window-number)
 (require 'buffer-move)
+(require 'ace-jump-mode)
 
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
 (defun google ()
   "Google the selected region if any, display a query prompt otherwise."
