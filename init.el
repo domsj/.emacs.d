@@ -13,6 +13,7 @@
 (add-to-list 'load-path (expand-file-name "emacs-skype" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "emms/lisp" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "ace-jump-mode" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "auto-complete-mode" user-emacs-directory))
 
 
 (when window-system
@@ -23,6 +24,8 @@
 (setenv "OCAML_TOPLEVEL_PATH" "/home/jan/Development/ROOT/OPAM_ROOT/system/lib/toplevel")
 (setenv "MANPATH" "/home/jan/Development/ROOT/OPAM_ROOT/system/man:")
 (setenv "PATH" "/home/jan/Development/ROOT/OPAM_ROOT/system/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/jan/Development/ROOT/OCAML/bin:/home/jan/Development/ROOT/OPAM/bin")
+
+(setq exec-path (split-string (getenv "PATH") ":"))
 
 (require 'unbound)
 (require 'expand-region)
@@ -50,6 +53,8 @@
 
 ; typerex 2
 ;(with-temp-buffer (insert (shell-command-to-string "ocp-edit-mode emacs -load-global-config")) (eval-buffer))
+(load-file "~/.emacs.d/typerex-append.el")
+
 
 (require 'undo-tree)
 (undo-tree-mode)
