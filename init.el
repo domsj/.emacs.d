@@ -25,6 +25,8 @@
 (setenv "MANPATH" "/home/jan/Development/ROOT/OPAM_ROOT/system/man:")
 (setenv "PATH" "/home/jan/Development/ROOT/OPAM_ROOT/system/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/jan/Development/ROOT/OCAML/bin:/home/jan/Development/ROOT/OPAM/bin")
 
+(setenv "OCAML_ANNOT" "1")
+
 (setq exec-path (split-string (getenv "PATH") ":"))
 
 (require 'unbound)
