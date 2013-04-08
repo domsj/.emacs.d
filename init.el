@@ -14,6 +14,7 @@
 (add-to-list 'load-path (expand-file-name "emms/lisp" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "ace-jump-mode" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "auto-complete-mode" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "mo-git-blame" user-emacs-directory))
 
 
 (when window-system
@@ -40,6 +41,9 @@
 (require 'ace-jump-mode)
 
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+
+(autoload 'mo-git-blame-file "mo-git-blame" nil t)
+(autoload 'mo-git-blame-current "mo-git-blame" nil t)
 
 (defun google ()
   "Google the selected region if any, display a query prompt otherwise."
