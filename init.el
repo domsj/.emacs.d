@@ -3,6 +3,33 @@
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (package-initialize)
 
+(defvar my-packages '(
+                      ;; starter-kit
+                      ;; starter-kit-lisp
+                      ;; starter-kit-bindings
+                      ;; starter-kit-eshell
+
+                      exec-path-from-shell
+                      find-file-in-repository
+                      magit
+                      smex
+                      yasnippet
+
+                      ; clojure stuff
+                      paredit
+                      clojure-mode
+                      clojure-test-mode
+                      nrepl))
+
+(dolist (p my-packages)
+  (when (not (package-installed-p p))
+    (package-refresh-contents)
+    (package-install p)))
+
+
+(shell-command-to-string "cd ~/.emacs.d && git submodule init; git submodule update")
+
+
 (add-to-list 'load-path user-emacs-directory)
 (add-to-list 'load-path (expand-file-name "expand-region" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "helm" user-emacs-directory))
@@ -24,7 +51,7 @@
 (setenv "OPAMROOT" "/home/jan/Development/ROOT/OPAM_ROOT")
 (setenv "OCAML_TOPLEVEL_PATH" "/home/jan/Development/ROOT/OPAM_ROOT/system/lib/toplevel")
 (setenv "MANPATH" "/home/jan/Development/ROOT/OPAM_ROOT/system/man:")
-(setenv "PATH" "/home/jan/Development/ROOT/OPAM_ROOT/system/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/jan/Development/ROOT/OCAML/bin:/home/jan/Development/ROOT/OPAM/bin")
+(setenv "PATH" "/home/jan/Development/ROOT/OPAM_ROOT/system/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/jan/Development/ROOT/OCAML/bin:/home/jan/Development/ROOT/OPAM/bin:/home/jan/bin")
 
 (setenv "OCAML_ANNOT" "1")
 
