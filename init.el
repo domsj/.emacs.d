@@ -29,19 +29,12 @@
 
 (shell-command-to-string "cd ~/.emacs.d && git submodule init; git submodule update")
 
-
 (add-to-list 'load-path user-emacs-directory)
-(add-to-list 'load-path (expand-file-name "expand-region" user-emacs-directory))
-(add-to-list 'load-path (expand-file-name "helm" user-emacs-directory))
-(add-to-list 'load-path (expand-file-name "workgroups" user-emacs-directory))
-(add-to-list 'load-path (expand-file-name "twittering-mode" user-emacs-directory))
-(add-to-list 'load-path (expand-file-name "bookmark-plus" user-emacs-directory))
-(add-to-list 'load-path (expand-file-name "undo-tree" user-emacs-directory))
-(add-to-list 'load-path (expand-file-name "emacs-skype" user-emacs-directory))
-(add-to-list 'load-path (expand-file-name "emms/lisp" user-emacs-directory))
-(add-to-list 'load-path (expand-file-name "ace-jump-mode" user-emacs-directory))
-(add-to-list 'load-path (expand-file-name "auto-complete-mode" user-emacs-directory))
-(add-to-list 'load-path (expand-file-name "mo-git-blame" user-emacs-directory))
+(defvar
+  my-subdirs
+  '("expand-region" "helm" "workgroups" "twittering-mode" "bookmark-plus" "undo-tree" "emacs-skype" "emms/lisp" "ace-jump-mode" "auto-complete-mode" "mo-git-blame" ))
+(dolist (d my-subdirs)
+  (add-to-list 'load-path (expand-file-name d user-emacs-directory)))
 
 
 (when window-system
@@ -150,7 +143,6 @@
 (setq visible-bell t)                          ; No beep when reporting errors
 (global-font-lock-mode 1)                      ; Color enabled
 (setq set-mark-command-repeat-pop 1)
-(electric-pair-mode +1)
 
 (blink-cursor-mode 0)                          ; No blinking cursor
 ; (setq scroll-preserve-screen-position t)       ; Scroll without moving cursor
@@ -215,10 +207,10 @@ user."
 (winner-mode 1)
 
 ; move buffers
-(global-set-key (kbd "<s-up>")     'buf-move-up)
-(global-set-key (kbd "<s-down>")   'buf-move-down)
-(global-set-key (kbd "<s-left>")   'buf-move-left)
-(global-set-key (kbd "<s-right>")  'buf-move-right)
+(global-set-key (kbd "s-p")     'buf-move-up)
+(global-set-key (kbd "s-n")   'buf-move-down)
+(global-set-key (kbd "s-h")   'buf-move-left)
+(global-set-key (kbd "s-l")  'buf-move-right)
 
 ;;; ----------- end buffer and window management
 
