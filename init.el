@@ -32,7 +32,7 @@
 (add-to-list 'load-path user-emacs-directory)
 (defvar
   my-subdirs
-  '("expand-region" "helm" "workgroups" "twittering-mode" "bookmark-plus" "undo-tree" "emacs-skype" "emms/lisp" "ace-jump-mode" "auto-complete-mode" "mo-git-blame" ))
+  '("expand-region" "helm" "workgroups" "twittering-mode" "bookmark-plus" "undo-tree" "emacs-skype" "emms/lisp" "ace-jump-mode" "auto-complete-mode"))
 (dolist (d my-subdirs)
   (add-to-list 'load-path (expand-file-name d user-emacs-directory)))
 
@@ -51,8 +51,6 @@
 (setq exec-path (split-string (getenv "PATH") ":"))
 
 (require 'unbound)
-(require 'expand-region)
-(require 'undo-tree)
 (require 'rainbow-delimiters)
 (require 'yasnippet)
 (require 'helm-config)
@@ -61,9 +59,6 @@
 (require 'ace-jump-mode)
 
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
-
-(autoload 'mo-git-blame-file "mo-git-blame" nil t)
-(autoload 'mo-git-blame-current "mo-git-blame" nil t)
 
 (defun google ()
   "Google the selected region if any, display a query prompt otherwise."
@@ -102,12 +97,12 @@
 
 (add-hook 'ibuffer-mode-hook 'hl-line-mode)
 (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
-(undo-tree-mode)
 
 
-
+(require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
 (global-set-key (kbd "C-+") 'er/contract-region)
+
 
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "C-x g") 'magit-status)
