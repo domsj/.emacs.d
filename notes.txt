@@ -7,16 +7,11 @@ check out
 - http://idorobots.org/2013/03/30/greader-alternative/ or some rss to email service
 
 -- general
-M-m             go back to indentation (aka C-a TAB)
 C-c r           revert to file on disk
 C-M-v           scroll other window
 M-%             search with regex
-M-g M-g         go to line
 C-x 4 C-f       open file in new window
-M-g s           (helm) grep
-C-u M-g s       (helm) recursive grep
 C-w             backward kill word
-C-x C-k         kill region
 C-x f           find file in repository
 C-c g           google
 
@@ -42,18 +37,19 @@ C-o d           definition
 
 -- magit
 http://daemianmack.com/magit-cheatsheet.html
+k
+        unstaged files -> delete
+        staged files -> revert
+        stashes -> delete
+reflog (for deleted commits)
+i               add file to .gitignore
 S-TAB           toggle visibility of current section and its children
 1,2,3,4         Expand current section to the corresponding level of detail
 i               add file to .gitignore
 C-u P           push to specified remote repository
 w               wazzup
-m               initiate manual merge
 --stashing
-z               create new stash
 Z               create new stash, leave changes in working and staging area
-a               apply stash
-A               pop stash
-k               drop stash
 
 
 -- paredit & clojure-mode
