@@ -111,6 +111,13 @@
 (global-set-key "\C-w" 'backward-kill-word)
 (global-set-key "\C-x\C-k" 'kill-region)
 
+;; clear the buffer in eshell
+(defun eshell/clear ()
+  "clear the eshell buffer."
+  (interactive)
+  (let ((inhibit-read-only t))
+    (erase-buffer)))
+
 ;; fancier goto-line from http://whattheemacsd.com/key-bindings.el-01.html
 (defun goto-line-with-feedback ()
   "Show line numbers temporarily, while prompting for the line number input"
