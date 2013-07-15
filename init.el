@@ -40,11 +40,10 @@
 (when window-system
   (exec-path-from-shell-initialize))
 
-(setenv "CAML_LD_LIBRARY_PATH" "/home/jan/Development/ROOT/OPAM_ROOT/system/lib/stublibs:/home/jan/Development/ROOT/OCAML/lib/ocaml/stublibs")
-(setenv "OPAMROOT" "/home/jan/Development/ROOT/OPAM_ROOT")
-(setenv "OCAML_TOPLEVEL_PATH" "/home/jan/Development/ROOT/OPAM_ROOT/system/lib/toplevel")
-(setenv "MANPATH" "/home/jan/Development/ROOT/OPAM_ROOT/system/man:")
-(setenv "PATH" "/home/jan/Development/ROOT/OPAM_ROOT/system/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/jan/Development/ROOT/OCAML/bin:/home/jan/Development/ROOT/OPAM/bin:/home/jan/bin")
+(setenv "CAML_LD_LIBRARY_PATH" "/home/jan/.opam/4.00.1/lib/stublibs")
+(setenv "OCAML_TOPLEVEL_PATH" "/home/jan/.opam/4.00.1/lib/toplevel")
+(setenv "MANPATH" "/home/jan/.opam/4.00.1/man")
+(setenv "PATH" "/home/jan/.opam/4.00.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/jan/bin; export PATH;")
 
 (setenv "OCAML_ANNOT" "1")
 
